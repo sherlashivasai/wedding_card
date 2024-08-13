@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Multi-Section Example</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="navbarr">
+        
+        <a href="#video-section" onclick="clearPasswordSection()">Home</a>
+        <a href="#girlphoto">bride</a>
+        <a href="#boyphoto" onclick="clearPasswordSection()">BrideGroom</a>
+        <a href="#couplephoto">couple</a>
+        <a href="#background-section" onclick="clearPasswordSection()">Album</a>
+        <a href="#video" onclick="clearPasswordSection()">video</a> 
+        <a href="#location-section">Contact-us</a>
+    </div>
+
+    
+
+    <div id="video-section" class="section">
+         
+        <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723480615/IMG_20240812_220553_b0wcf3.jpg  " alt="Welcome Image">
+                
+    </div>
+
+    <div id="girlphoto">
+        <div class="girl">
+            <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723482445/1000181821-modified_ezifvq.png  " alt="Image" class="rounded-image">
+            <div class="text-content">
+                <h2 class="bride"> Bride's details:-</h2>
+                <h2>Snehitha</h2>
+                <h2>D/O Mallesh & Bhagya</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="boyphoto">
+        <div class="girl">
+            
+            <div class="text-content">
+                <h2>BrideGroom:-</h2>
+                <h2>Sravankumar</h2>
+                <h2>S/O </h2>
+            </div>
+            <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723482131/1000182152-modified_ns7hvm.png " alt="Image" class="rounded-image">
+        </div>
+    </div>
+
+    <div id="couplephoto">
+   
+        <div id="video-section" class="section">
+            
+            <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723482658/IMG-20240812-WA0025_aybvis.jpg   " class="couple" alt="Welcome Image">
+                    
+        </div>
+    </div>
+    <div id="background-section">
+        <div class="photo-gallery">
+            <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723480724/IMG-20240811-WA0002_fjtw8c.jpg " class="gallery-photo" onclick="expandPhoto(this)">
+            <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723480727/IMG-20240811-WA0006_kmjktw.jpg " class="gallery-photo" onclick="expandPhoto(this)">
+            <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723484542/IMG-20240811-WA0010_qgpu1m.jpg " class="gallery-photo" onclick="expandPhoto(this)">
+            <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723484542/IMG-20240811-WA0011_tmnuy7.jpg " class="gallery-photo" onclick="expandPhoto(this)">
+            <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723484542/IMG-20240811-WA0009_f9szom.jpg " class="gallery-photo" onclick="expandPhoto(this)">
+            <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723484542/IMG-20240811-WA0005_hzqork.jpg " class="gallery-photo" onclick="expandPhoto(this)">
+            <img src="https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723484690/IMG-20240811-WA0030_ies6rw.jpg " class="gallery-photo" onclick="expandPhoto(this)">
+          </div>
+          
+    </div>
+
+
+    
+         
+    <div id="video-section" class="section">
+        <video controls>
+          <source src="https://res.cloudinary.com/dk8wdwrqz/video/upload/v1723545183/VID_20240813155941442_ctb1uk.mp4 " type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+
+
+      <div id="location-section" class="section">
+        <div>
+            <h2>
+             Contact for more details
+            </h2>
+            <p>
+               Mallesh : 9908541684
+            </p>
+            <p>
+               vishnu : 8688621629
+            </p>
+        </div>
+        <div>
+            <h2>Our Location</h2>
+        <h2></h2>
+        <p>Click the link below to navigate to our location:</p>
+        <a href="https://maps.app.goo.gl/BPuRhvfdqSt9WY2d6" target="_blank" class="location-link">Location</a>
+        </div>
+      </div>
+      
+
+    <script>
+        
+        // Intersection Observer for clearing password section on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const passwordSection = document.getElementById('password-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        clearPasswordSection();
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(passwordSection);
+        });
+
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const togglePassword = document.querySelector('.toggle-password');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                togglePassword.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                togglePassword.textContent = '👁️';
+            }
+        }
+        function clearPasswordSection() {
+            document.getElementById('password').value = '';
+            document.getElementById('result').innerHTML = '';
+        }
+
+        function expandPhoto(selectedPhoto) {
+  const allPhotos = document.querySelectorAll('.gallery-photo');
+  
+  allPhotos.forEach(photo => {
+    if (photo !== selectedPhoto) {
+      photo.classList.remove('expanded');
+    }
+  });
+  
+  selectedPhoto.classList.toggle('expanded');
+}
+
+    </script>
+
+</body>
+</html>
+
+
+<!--<div class="navbar">
+    <a href="#background-section" onclick="clearPasswordSection()">Background</a>
+    <a href="#video-section" onclick="clearPasswordSection()">Video</a>
+    <a href="#password-section">Password</a>
+    <a href="#footer" onclick="clearPasswordSection()">Footer</a>
+</div> .password-section button:hover{
+            padding: 10px;
+            font-size: 1em;
+            color:red;
+        }
+function clearPasswordSection() {
+            document.getElementById('password').value = '';
+            document.getElementById('result').innerHTML = '';
+        }
+             <!--<h1>Footer Section</h1>--!>

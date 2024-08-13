@@ -1,0 +1,247 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap');
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  margin: auto;
+  font-family: 'Grey Qo',cursive;
+}
+
+#girlphoto {
+  background-image: url('https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723563730/IMG_20240812_233516_lbepid.jpg ');
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 20px; /* Adds padding around the content */
+   /* Ensures text is readable on the background */
+  text-align: center; /* Centers text inside the section */
+  margin: 20px;
+  border-radius: 40px;
+
+}
+#boyphoto{
+  background-image: url('https://res.cloudinary.com/dk8wdwrqz/image/upload/v1723563815/IMG_20240813_211314_mwfxyl.jpg ');
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 20px; /* Adds padding around the content */
+   /* Ensures text is readable on the background */
+  text-align: center; 
+  margin: 20px;
+  border-radius: 40px;
+  
+}
+@media (min-width: 900px) {
+    
+  
+  #background-section p{
+    font-size: 24px;
+  }
+}
+
+.navbarr {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbarr a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbarr a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 50px; /* Offset for fixed header */
+  
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 100%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: antiquewhite;
+}
+
+.footer {
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+}
+.footer pre {
+  font-size: 18px;
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.toggle-password {
+  cursor: pointer;
+  margin-left: -30px;
+  position: relative;
+  right: 20px;
+}
+
+.girl {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  padding: 20px 30px; /* Added padding for the container */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-content {
+  margin-right: 50px; /* Increased margin for space between text and image */
+}
+
+.rounded-image {
+  width: 500px;
+  height: 500px;
+  border: 4px solid red; /* Combines border-width, border-style, and border-color */
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures the image covers the entire element without distortion */
+}
+.text-content h2 {
+  margin: 0;
+  margin-bottom: 10px; /* Added margin-bottom for spacing between title and description */
+  font-size: 50px;
+  color: #333;
+}
+
+.text-content p {
+  margin: 0;
+  font-size: 30px;
+  color: #666;
+}
+.couple{
+  width: 90%;
+  border-radius: 40px;
+  border: 4px solid red;
+}
+.photo-gallery {
+  display: flex;
+  width: 100%;
+  height: 900px;
+}
+
+.gallery-photo {
+  width: calc(100% / 7); /* Each photo initially takes up 1/7th of the row */
+  transition: width 0.9s ease-in-out;
+  cursor: pointer;
+  object-fit: cover;
+  height: 100%; /* Adjust height as needed */
+  box-sizing: border-box;
+  border: 1px solid #ddd; /* Optional border for better visibility */
+}
+
+.gallery-photo.expanded {
+  width: 50%; /* The clicked photo expands to 50% of the row */
+}
+
+.gallery-photo:not(.expanded) {
+  width: calc(50% / 6); /* Remaining photos share the other 50% */
+}
+
+/* General styles for the video section */
+#video-section {
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 0; /* Remove padding */
+  text-align: center; /* Center content */
+}
+
+/* Styling the video element */
+#video-section video {
+  width: 90vw; /* Full viewport width */
+  height: 90vh; /* Full viewport height */
+  object-fit: cover; /* Ensure video covers the entire area */
+  border: none; /* Remove borders */
+  border-radius: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #video-section video {
+    width: 100vw; /* Full width for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+
+/* General styles for the location section */
+#location-section {
+  background-color:rgb(56, 52, 52); /* Light blue background */
+  padding: 30px;
+   /* Center the content */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px auto; /* Center the section with margin */
+   /* Limit the section width */
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* Styling the header */
+#location-section h2 {
+  margin-bottom: 10px;
+  color:white;
+  font-size: 40px;
+}
+
+/* Styling the paragraph */
+#location-section p {
+  margin-bottom: 20px;
+  color:white;
+  font-size: 30px;
+}
+
+/* Styling the location link */
+.location-link {
+  display: inline-block;
+  background-color: #007BFF; /* Button-like background */
+  color: #fff; /* White text */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none; /* Remove underline */
+  font-size: 25px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover effect for the link */
+.location-link:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
